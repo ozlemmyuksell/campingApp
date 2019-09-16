@@ -1,24 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import SplitPane from "react-split-pane";
+import MapContainer from "./Map/MapContainer";
+import Cards from "./AllCards/Cards";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="page">
+      <SplitPane split="vertical" minSize={500} defaultSize={900}>
+        <div className="left-pane">
+          <Cards />
+        </div>
+        <MapContainer />
+      </SplitPane>
     </div>
   );
 }
